@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
-
+    id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
+    id("com.android.application")
 }
 
 android {
@@ -42,4 +43,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+    implementation("com.google.firebase:firebase-firestore")
 }
